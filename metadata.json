@@ -1,0 +1,30 @@
+{
+  "name": "trevharmon-raspberry_pi",
+  "version": "0.0.0",
+  "author": "Trev Harmon",
+  "summary": "Configures the Raspberry Pi",
+  "license": "Apache-2.0",
+  "source": "https://github.com/trevharmon/trevharmon-raspberry_pi",
+  "issues_url": "https://github.com/trevharmon/trevharmon-raspberry_pi/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "9"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "description": "Raspberry Pi module as described at http://rpf.io/configtxt",
+  "pdk-version": "1.15.0",
+  "template-url": "pdk-default#1.15.0",
+  "template-ref": "tags/1.15.0-0-g0bc522e"
+}
