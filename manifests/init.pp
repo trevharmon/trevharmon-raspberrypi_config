@@ -3,8 +3,8 @@
 # A description of what this class does
 #
 # @example
-#   include raspberry_pi
-class raspberry_pi (
+#   include raspberrypi_config
+class raspberrypi_config (
   # General options
   Boolean                             $show_warnings                  = true,
   Boolean                             $warnings_as_errors             = false,

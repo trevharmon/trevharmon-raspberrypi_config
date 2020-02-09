@@ -1,11 +1,11 @@
 {
-  "name": "trevharmon-raspberry_pi",
+  "name": "trevharmon-raspberrypi_config",
   "version": "0.0.0",
   "author": "Trev Harmon",
   "summary": "Configures the Raspberry Pi",
   "license": "Apache-2.0",
-  "source": "https://github.com/trevharmon/trevharmon-raspberry_pi",
-  "issues_url": "https://github.com/trevharmon/trevharmon-raspberry_pi/issues",
+  "source": "https://github.com/trevharmon/trevharmon-raspberrypi_config",
+  "issues_url": "https://github.com/trevharmon/trevharmon-raspberrypi_config/issues",
   "dependencies": [
 
   ],
