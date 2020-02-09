@@ -1,1 +1,250 @@
 ---
+# General options
+raspberrypi_config::config_files: '/boot/config.txt'
+raspberrypi_config::show_warnings: true
+raspberrypi_config::warnings_as_errors: false
+
+# Memory options
+raspberrypi_config::gpu_mem: null
+raspberrypi_config::gpu_mem_256: null
+raspberrypi_config::gpu_mem_512: null
+raspberrypi_config::gpu_mem_1024: null
+raspberrypi_config::disable_l2cache: null
+
+# License key and codec options
+raspberrypi_config::decode_MPG2: null
+raspberrypi_config::decode_WVC1: null
+
+# Composite video options
+raspberrypi_config::sdtv_mode: null
+raspberrypi_config::sdtv_aspect: null
+raspberrypi_config::sdtv_disable_colour_burst: null
+raspberrypi_config::enable_tvout: null
+
+# HDMI [0] options
+raspberrypi_config::hdmi_ignore_edid_0: null
+raspberrypi_config::hdmi_edid_file_0: null
+raspberrypi_config::hdmi_edid_filename_0: null
+raspberrypi_config::hdmi_force_edid_audio_0: null
+raspberrypi_config::hdmi_ignore_edid_audio_0: null
+raspberrypi_config::hdmi_force_edid_3d_0: null
+raspberrypi_config::hdmi_ignore_cec_init_0: null
+raspberrypi_config::hdmi_ignore_cec_0: null
+raspberrypi_config::cec_osd_name_0: null
+raspberrypi_config::hdmi_pixel_encoding_0: null
+raspberrypi_config::hdmi_blanking_0: null
+raspberrypi_config::hdmi_drive_0: null
+raspberrypi_config::config_hdmi_boost_0: null
+raspberrypi_config::hdmi_group_0: null
+raspberrypi_config::hdmi_mode_0: null
+raspberrypi_config::hdmi_timings_h_active_pixels_0: null
+raspberrypi_config::hdmi_timings_h_sync_polarity_0: null
+raspberrypi_config::hdmi_timings_h_front_porch_0: null
+raspberrypi_config::hdmi_timings_h_sync_pulse_0: null
+raspberrypi_config::hdmi_timings_h_back_porch_0: null
+raspberrypi_config::hdmi_timings_v_active_lines_0: null
+raspberrypi_config::hdmi_timings_v_sync_polarity_0: null
+raspberrypi_config::hdmi_timings_v_front_porch_0: null
+raspberrypi_config::hdmi_timings_v_sync_pulse_0: null
+raspberrypi_config::hdmi_timings_v_back_porch_0: null
+raspberrypi_config::hdmi_timings_v_sync_offset_a_0: null
+raspberrypi_config::hdmi_timings_v_sync_offset_b_0: null
+raspberrypi_config::hdmi_timings_pixel_rep_0: null
+raspberrypi_config::hdmi_timings_frame_rate_0: null
+raspberrypi_config::hdmi_timings_interlaced_0: null
+raspberrypi_config::hdmi_timings_pixel_freq_0: null
+raspberrypi_config::hdmi_timings_aspect_ratio_0: null
+raspberrypi_config::hdmi_force_mode_0: null
+raspberrypi_config::edid_content_type_0: null
+raspberrypi_config::hdmi_enable_4kp60_0: null
+raspberrypi_config::hdmi_cvt_width_0: null
+raspberrypi_config::hdmi_cvt_height_0: null
+raspberrypi_config::hdmi_cvt_framerate_0: null
+raspberrypi_config::hdmi_cvt_aspect_0: null
+raspberrypi_config::hdmi_cvt_margins_0: null
+raspberrypi_config::hdmi_cvt_interface_0: null
+raspberrypi_config::hdmi_cvt_rb_0: null
+
+# HDMI [1] options
+raspberrypi_config::hdmi_ignore_edid_1: null
+raspberrypi_config::hdmi_edid_file_1: null
+raspberrypi_config::hdmi_edid_filename_1: null
+raspberrypi_config::hdmi_force_edid_audio_1: null
+raspberrypi_config::hdmi_ignore_edid_audio_1: null
+raspberrypi_config::hdmi_force_edid_3d_1: null
+raspberrypi_config::hdmi_ignore_cec_init_1: null
+raspberrypi_config::hdmi_ignore_cec_1: null
+raspberrypi_config::cec_osd_name_1: null
+raspberrypi_config::hdmi_pixel_encoding_1: null
+raspberrypi_config::hdmi_blanking_1: null
+raspberrypi_config::hdmi_drive_1: null
+raspberrypi_config::config_hdmi_boost_1: null
+raspberrypi_config::hdmi_group_1: null
+raspberrypi_config::hdmi_mode_1: null
+raspberrypi_config::hdmi_timings_h_active_pixels_1: null
+raspberrypi_config::hdmi_timings_h_sync_polarity_1: null
+raspberrypi_config::hdmi_timings_h_front_porch_1: null
+raspberrypi_config::hdmi_timings_h_sync_pulse_1: null
+raspberrypi_config::hdmi_timings_h_back_porch_1: null
+raspberrypi_config::hdmi_timings_v_active_lines_1: null
+raspberrypi_config::hdmi_timings_v_sync_polarity_1: null
+raspberrypi_config::hdmi_timings_v_front_porch_1: null
+raspberrypi_config::hdmi_timings_v_sync_pulse_1: null
+raspberrypi_config::hdmi_timings_v_back_porch_1: null
+raspberrypi_config::hdmi_timings_v_sync_offset_a_1: null
+raspberrypi_config::hdmi_timings_v_sync_offset_b_1: null
+raspberrypi_config::hdmi_timings_pixel_rep_1: null
+raspberrypi_config::hdmi_timings_frame_rate_1: null
+raspberrypi_config::hdmi_timings_interlaced_1: null
+raspberrypi_config::hdmi_timings_pixel_freq_1: null
+raspberrypi_config::hdmi_timings_aspect_ratio_1: null
+raspberrypi_config::hdmi_force_mode_1: null
+raspberrypi_config::edid_content_type_1: null
+raspberrypi_config::hdmi_enable_4kp60_1: null
+raspberrypi_config::hdmi_cvt_width_1: null
+raspberrypi_config::hdmi_cvt_height_1: null
+raspberrypi_config::hdmi_cvt_framerate_1: null
+raspberrypi_config::hdmi_cvt_aspect_1: null
+raspberrypi_config::hdmi_cvt_margins_1: null
+raspberrypi_config::hdmi_cvt_interface_1: null
+raspberrypi_config::hdmi_cvt_rb_1: null
+
+# LCD options
+raspberrypi_config::ignore_lcd: null
+raspberrypi_config::display_default_lcd: null
+raspberrypi_config::lcd_frames: null
+raspberrypi_config::lcd_rotate: null
+raspberrypi_config::disable_touchscreen: null
+raspberrypi_config::enable_dpi_lcd: null
+raspberrypi_config::dpi_group: null
+raspberrypi_config::dpi_mode: null
+raspberrypi_config::dpi_timings_h_active_pixels: null
+raspberrypi_config::dpi_timings_h_sync_polarity: null
+raspberrypi_config::dpi_timings_h_front_porch: null
+raspberrypi_config::dpi_timings_h_sync_pulse: null
+raspberrypi_config::dpi_timings_h_back_porch: null
+raspberrypi_config::dpi_timings_v_active_lines: null
+raspberrypi_config::dpi_timings_v_sync_polarity: null
+raspberrypi_config::dpi_timings_v_front_porch: null
+raspberrypi_config::dpi_timings_v_sync_pulse: null
+raspberrypi_config::dpi_timings_v_back_porch: null
+raspberrypi_config::dpi_timings_v_sync_offset_a: null
+raspberrypi_config::dpi_timings_v_sync_offset_b: null
+raspberrypi_config::dpi_timings_pixel_rep: null
+raspberrypi_config::dpi_timings_frame_rate: null
+raspberrypi_config::dpi_timings_interlaced: null
+raspberrypi_config::dpi_timings_pixel_freq: null
+raspberrypi_config::dpi_timings_aspect_ratio: null
+
+# Generic video options
+raspberrypi_config::hdmi_force_hotplug: null
+raspberrypi_config::hdmi_ignore_hotplug: null
+raspberrypi_config::disable_overscan: null
+raspberrypi_config::ovrecan_left: null
+raspberrypi_config::overscan_right: null
+raspberrypi_config::overscan_top: null
+raspberrypi_config::overscan_bottom: null
+raspberrypi_config::overscan_scale: null
+raspberrypi_config::framebuffer_width: null
+raspberrypi_config::framebuffer_height: null
+raspberrypi_config::max_framebuffer_width: null
+raspberrypi_config::max_framebuffer_height: null
+raspberrypi_config::framebuffer_depth: null
+raspberrypi_config::framebuffer_ignore_alpha: null
+raspberrypi_config::framebuffer_priority: null
+raspberrypi_config::test_mode: null
+raspberrypi_config::display_hdmi_rotate: null
+raspberrypi_config::display_lcd_rotate: null
+raspberrypi_config::display_rotate: null
+raspberrypi_config::disable_fw_kms_setup: null
+raspberrypi_config::dispmanx_offline: null
+
+# Camera options
+raspberrypi_config::disable_camera_led: null
+
+# Boot options
+raspberrypi_config::start_file: null
+raspberrypi_config::fixup_file: null
+raspberrypi_config::start_x: null
+raspberrypi_config::start_debug: null
+raspberrypi_config::disable_commandline_tags: null
+raspberrypi_config::cmdline: null
+raspberrypi_config::kernel: null
+raspberrypi_config::arm_64bit: null
+raspberrypi_config::arm_control: null
+raspberrypi_config::kernel_address: null
+raspberrypi_config::kernel_old: null
+raspberrypi_config::ramfsfile: null
+raspberrypi_config::ramfsaddr: null
+raspberrypi_config::initramfs_file: null
+raspberrypi_config::initramfs_addr: null
+raspberrypi_config::init_uart_baud: null
+raspberrypi_config::init_uart_clock: null
+raspberrypi_config::bootcode_delay: null
+raspberrypi_config::boot_delay: null
+raspberrypi_config::boot_delay_ms: null
+raspberrypi_config::disable_splash: null
+raspberrypi_config::enable_gic: null
+
+# GPIO options
+raspberrypi_config::gpio_0: null
+raspberrypi_config::gpio_1: null
+raspberrypi_config::gpio_2: null
+raspberrypi_config::gpio_3: null
+raspberrypi_config::gpio_4: null
+raspberrypi_config::gpio_5: null
+raspberrypi_config::gpio_6: null
+raspberrypi_config::gpio_7: null
+raspberrypi_config::gpio_8: null
+raspberrypi_config::gpio_9: null
+raspberrypi_config::gpio_10: null
+raspberrypi_config::gpio_11: null
+raspberrypi_config::gpio_12: null
+raspberrypi_config::gpio_13: null
+raspberrypi_config::gpio_14: null
+raspberrypi_config::gpio_15: null
+raspberrypi_config::gpio_16: null
+raspberrypi_config::gpio_17: null
+raspberrypi_config::gpio_18: null
+raspberrypi_config::gpio_19: null
+raspberrypi_config::gpio_20: null
+raspberrypi_config::gpio_21: null
+raspberrypi_config::gpio_22: null
+raspberrypi_config::gpio_23: null
+raspberrypi_config::gpio_24: null
+raspberrypi_config::gpio_25: null
+raspberrypi_config::gpio_26: null
+raspberrypi_config::gpio_27: null
+
+# Overclocking options
+raspberrypi_config::arm_freq: null
+raspberrypi_config::gpu_freq: null
+raspberrypi_config::core_freq: null
+raspberrypi_config::h264_freq: null
+raspberrypi_config::isp_freq: null
+raspberrypi_config::v3d_freq: null
+raspberrypi_config::sdram_freq: null
+raspberrypi_config::over_voltage: null
+raspberrypi_config::over_voltage_sdram: null
+raspberrypi_config::over_voltage_sdram_c: null
+raspberrypi_config::over_voltage_sdram_i: null
+raspberrypi_config::over_voltage_sdram_p: null
+raspberrypi_config::force_turbo: null
+raspberrypi_config::initial_turbo: null
+raspberrypi_config::arm_freq_min: null
+raspberrypi_config::core_freq_min: null
+raspberrypi_config::gpu_freq_min: null
+raspberrypi_config::h264_freq_min: null
+raspberrypi_config::isp_freq_min: null
+raspberrypi_config::v3d_freq_min: null
+raspberrypi_config::sdram_freq_min: null
+raspberrypi_config::over_voltage_min: null
+raspberrypi_config::temp_limit: null
+raspberrypi_config::temp_soft_limit: null
+raspberrypi_config::never_over_voltage: null
+raspberrypi_config::disable_auto_turbo: null
+
+# Miscellaneous options
+raspberrypi_config::avoid_warnings: null
+raspberrypi_config::logging_level: null
+raspberrypi_config::include: null
