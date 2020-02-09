@@ -1,0 +1,172 @@
+<% | Integer           $port,
+     Optional[Boolean] $hdmi_ignore_edid,
+     Optional[Boolean] $hdmi_edid_file,
+     Optional[String]  $hdmi_edid_filename,
+     Optional[Boolean] $hdmi_force_edid_audio,
+     Optional[Boolean] $hdmi_ignore_edid_audio,
+     Optional[Boolean] $hdmi_force_edid_3d,
+     Optional[Boolean] $hdmi_ignore_cec_init,
+     Optional[Boolean] $hdmi_ignore_cec,
+     Optional[String]  $cec_osd_name,
+     Optional[Integer] $hdmi_pixel_encoding,
+     Optional[Integer] $hdmi_blanking,
+     Optional[Integer] $hdmi_drive,
+     Optional[Integer] $config_hdmi_boost,
+     Optional[Integer] $hdmi_group,
+     Optional[Integer] $hdmi_mode,
+     Optional[Integer] $hdmi_timings_h_active_pixels,
+     Optional[Boolean] $hdmi_timings_h_sync_polarity,
+     Optional[Integer] $hdmi_timings_h_front_porch,
+     Optional[Integer] $hdmi_timings_h_sync_pulse,
+     Optional[Integer] $hdmi_timings_h_back_porch,
+     Optional[Integer] $hdmi_timings_v_active_lines,
+     Optional[Boolean] $hdmi_timings_v_sync_polarity,
+     Optional[Integer] $hdmi_timings_v_front_porch,
+     Optional[Integer] $hdmi_timings_v_sync_pulse,
+     Optional[Integer] $hdmi_timings_v_back_porch,
+     Optional[Integer] $hdmi_timings_v_sync_offset_a,
+     Optional[Integer] $hdmi_timings_v_sync_offset_b,
+     Optional[Integer] $hdmi_timings_pixel_rep,
+     Optional[Integer] $hdmi_timings_frame_rate,
+     Optional[Integer] $hdmi_timings_interlaced,
+     Optional[Integer] $hdmi_timings_pixel_freq,
+     Optional[Data]    $hdmi_timings_aspect_ratio,
+     Optional[Boolean] $hdmi_force_mode,
+     Optional[Integer] $edid_content_type,
+     Optional[Boolean] $hdmi_enable_4kp60,
+     Optional[Integer] $hdmi_cvt_width,
+     Optional[Integer] $hdmi_cvt_height,
+     Optional[Integer] $hdmi_cvt_framerate,
+     Optional[Data]    $hdmi_cvt_aspect,
+     Optional[Boolean] $hdmi_cvt_margins,
+     Optional[Boolean] $hdmi_cvt_interface,
+     Optional[Boolean] $hdmi_cvt_rb,
+| -%>
+# [ HDMI #<%= $port %> Video Options ]
+<% if $hdmi_ignore_edid != undef { -%>
+hdmi_ignore_edid:<%= $port %>=<% if $hdmi_ignore_edid { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_edid_file != undef { -%>
+hdmi_edid_file:<%= $port %>=<% if $hdmi_edid_file { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_edid_filename != undef { -%>
+hdmi_edid_filename:<%= $port %>=<%= $hdmi_edid_filename %>
+<% } -%>
+<% if $hdmi_force_edid_audio != undef { -%>
+hdmi_force_edid_audio:<%= $port %>=<% if $hdmi_force_edid_audio { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_ignore_edid_audio != undef { -%>
+hdmi_ignore_edid_audio:<%= $port %>=<% if $hdmi_ignore_edid_audio { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_force_edid_3d != undef { -%>
+hdmi_force_edid_3d:<%= $port %>=<% if $hdmi_force_edid_3d { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_ignore_cec_init != undef { -%>
+hdmi_ignore_cec_init:<%= $port %>=<% if $hdmi_ignore_cec_init { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_ignore_cec != undef { -%>
+hdmi_ignore_cec:<%= $port %>=<% if $hdmi_ignore_cec { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $cec_osd_name != undef { -%>
+cec_osd_name:<%= $port %>=<%= $cec_osd_name %>
+<% } -%>
+<% if $hdmi_pixel_encoding != undef { -%>
+hdmi_pixel_encoding:<%= $port %>=<%= $hdmi_pixel_encoding %>
+<% } -%>
+<% if $hdmi_blanking != undef { -%>
+hdmi_blanking:<%= $port %>=<%= $hdmi_blanking %>
+<% } -%>
+<% if $hdmi_drive != undef { -%>
+hdmi_drive:<%= $port %>=<%= $hdmi_drive %>
+<% } -%>
+<% if $config_hdmi_boost != undef { -%>
+config_hdmi_boost:<%= $port %>=<%= $config_html_boost %>
+<% } -%>
+<% if $hdmi_group != undef { -%>
+hdmi_group:<%= $port %>=<%= $hdmi_group %>
+<% } -%>
+<% if $hdmi_mode != undef { -%>
+hdmi_mode:<%= $port %>=<%= $hdmi_mode %>
+<% } -%>
+<% if $hdmi_timings_h_active_pixels != undef { -%>
+hdmi_timings_h_active_pixels:<%= $port %>=<%= $hdmi_timings_h_active_pixels %>
+<% } -%>
+<% if $hdmi_timings_h_sync_polarity != undef { -%>
+hdmi_timings_h_sync_polarity:<%= $port %>=<% if $hdmi_timings_h_sync_polarity { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_timings_h_front_porch != undef { -%>
+hdmi_timings_h_front_porch:<%= $port %>=<%= $hdmi_timings_h_front_porch %>
+<% } -%>
+<% if $hdmi_timings_h_sync_pulse != undef { -%>
+hdmi_timnings_h_sync_pulse:<%= $port %>=<%= $hdmi_timings_h_sync_pulse %>
+<% } -%>
+<% if $hdmi_timings_h_back_porch != undef { -%>
+hdmi_timings_h_back_porch:<%= $port %>=<%= $hdmi_timings_h_back_porch %>
+<% } -%>
+<% if $hdmi_timings_v_active_lines != undef { -%>
+hdmi_timings_v_active_lines:<%= $port %>=<%= $hdmi_timings_v_active_lines %>
+<% } -%>
+<% if $hdmi_timings_v_sync_polarity != undef { -%>
+hdmi_timings_v_sync_polarity:<%= $port %>=<% if $hdmi_timings_v_sync_polarity { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_timings_v_front_porch != undef { -%>
+hdmi_timings_v_front_porch:<%= $port %>=<%= $hdmi_timings_v_front_porch %>
+<% } -%>
+<% if $hdmi_timings_v_sync_pulse != undef { -%>
+hdmi_timings_v_sync_pulse:<%= $port %>=<%= $hdmi_timings_v_sync_pulse %>
+<% } -%>
+<% if $hdmi_timings_v_back_porch != undef { -%>
+hdmi_timings_v_back_porch:<%= $port %>=<%= $ %>
+<% } -%>
+<% if $hdmi_timings_v_sync_offset_a != undef { -%>
+hdmi_timings_v_sync_offset_a:<%= $port %>=<%= $hdmi_timings_v_sync_offset_a %>
+<% } -%>
+<% if $hdmi_timings_v_sync_offset_b != undef { -%>
+hdmi_timings_v_sync_offset_b:<%= $port %>=<%= $hdmi_timings_v_sync_offset_b %>
+<% } -%>
+<% if $hdmi_timings_pixel_rep != undef { -%>
+hdmi_timings_pixel_rep:<%= $port %>=<%= $hdmi_timings_pixel_rep %>
+<% } -%>
+<% if $hdmi_timings_frame_rate != undef { -%>
+hdmi_timings_frome_rate:<%= $port %>=<%= $ %>
+<% } -%>
+<% if $hdmi_timings_interlaced != undef { -%>
+hdmi_timings_interlaced:<%= $port %>=<%= $hdmi_timings_interlaced %>
+<% } -%>
+<% if $hdmi_timings_pixel_freq != undef { -%>
+hdmi_timings_pixel_freq:<%= $port %>=<%= $hdmi_timings_pixel_freq %>
+<% } -%>
+<% if $hdmi_timings_aspect_ratio != undef { -%>
+hdmi_timings_aspect_ratio:<%= $port %>=<%= $hdmi_timings_aspect_ratio %>
+<% } -%>
+<% if $hdmi_force_mode != undef { -%>
+hdmi_force_mode:<%= $port %>=<% if $hdmi_force_mode { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $edid_content_type != undef { -%>
+edid_content_type:<%= $port %>=<%= $edid_content_type %>
+<% } -%>
+<% if $hdmi_enable_4kp60 != undef { -%>
+hdmi_enable_4kp60:<%= $port %>=<% if $hdmi_enable_4kp60 { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_cvt_width != undef { -%>
+hdmi_cvt_width:<%= $port %>=<% if $hdmi_cvt_width { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_cvt_height != undef { -%>
+hdmi_cvt_height:<%= $port %>=<% if $hdmi_cvt_height { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_cvt_framerate != undef { -%>
+hdmi_cvt_framerate:<%= $port %>=<% if $hdmi_cvt_framerate { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_cvt_aspect != undef { -%>
+hdmi_cvt_aspect:<%= $port %>=<% if $hdmi_cvt_aspect { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $hdmi_cvt_margins != undef { -%>
+hdmi_cvt_margins:<%= $port %>=<%= $hdmi_cvt_margins %>
+<% } -%>
+<% if $hdmi_cvt_interface != undef { -%>
+hdmi_cvt_interface:<%= $port %>=<%= $hdmi_cvt_interface %>
+<% } -%>
+<% if $hdmi_cvt_rb != undef { -%>
+hdmi_cvt_rb:<%= $port %>=<%= $hdmi_cvt_rb %>
+<% } -%>
+

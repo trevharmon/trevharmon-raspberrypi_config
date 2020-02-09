@@ -1,0 +1,87 @@
+<% | Optional[Boolean] $hdmi_force_hotplug,
+     Optional[Boolean] $hdmi_ignore_hotplug,
+     Optional[Boolean] $disable_overscan,
+     Optional[Integer] $overscan_left,
+     Optional[Integer] $overscan_right,
+     Optional[Integer] $overscan_top,
+     Optional[Integer] $overscan_bottom,
+     Optional[Boolean] $overscan_scale,
+     Optional[Integer] $framebuffer_width,
+     Optional[Integer] $framebuffer_height,
+     Optional[Integer] $max_framebuffer_width,
+     Optional[Integer] $max_framebuffer_height,
+     Optional[Integer] $framebuffer_depth,
+     Optional[Boolean] $framebuffer_ignore_alpha,
+     Optional[Integer] $framebuffer_priority,
+     Optional[Boolean] $test_mode,
+     Optional[Data]    $display_hdmi_rotate,
+     Optional[Data]    $display_lcd_rotate,
+     Optional[Data]    $display_rotate,
+     Optional[Boolean] $disable_fw_kms_setup,
+     Optional[Boolean] $dispmanx_offline,
+| -%>
+# [ Generic Video Options ]
+<% if $hdmi_force_hotplug != undef { -%>
+hdmi_force_hotplug=<% if $hdmi_force_hotplug {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $hdmi_ignore_hotplug != undef { -%>
+hdmi_ignore_hotplug=<% if $hdmi_ignore_hotplug {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $disable_overscan != undef { -%>
+disable_overscan=<% if $disable_overscan {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $overscan_left != undef { -%>
+overscan_left=<%= $overscan_left %>
+<% } -%>
+<% if $overscan_right != undef { -%>
+overscan_right=<%= $overscan_right %>
+<% } -%>
+<% if $overscan_top != undef { -%>
+overscan_top=<%= $overscan_top %>
+<% } -%>
+<% if $overscan_bottom != undef { -%>
+overscan_bottom=<%= $overscan_bottom %>
+<% } -%>
+<% if $overscan_scale != undef { -%>
+overscan_scale=<% if $overscan_scale {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $framebuffer_width != undef { -%>
+framebuffer_width=<%= $framebuffer_width %>
+<% } -%>
+<% if $framebuffer_height != undef { -%>
+framebuffer_height=<%= $framebuffer_height %>
+<% } -%>
+<% if $max_framebuffer_width != undef { -%>
+max_framebuffer_width=<%= $max_framebuffer_width %>
+<% } -%>
+<% if $max_framebuffer_height != undef { -%>
+max_framebuffer_height=<%= $max_framebuffer_height %>
+<% } -%>
+<% if $framebuffer_depth != undef { -%>
+framebuffer_depth=<%= $framebuffer_depth %>
+<% } -%>
+<% if $framebuffer_ignore_alpha != undef { -%>
+framebuffer_ignore_alpha=<% if $framebuffer_ignore_alpha {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $framebuffer_priority != undef { -%>
+framebuffer_priority=<%= $framebuffer_priority %>
+<% } -%>
+<% if $test_mode != undef { -%>
+test_mode=<% if $test_mode {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $display_hdmi_rotate != undef { -%>
+display_hdmi_rotate=<%= $display_hdmi_rotate %>
+<% } -%>
+<% if $display_lcd_rotate != undef { -%>
+display_lcd_rotate=<%= $display_lcd_rotate %>
+<% } -%>
+<% if $display_rotate != undef { -%>
+display_rotate=<%= $display_rotate %>
+<% } -%>
+<% if $disable_fw_kms_setup != undef { -%>
+disable_fw_kms_setup=<% if $disable_fw_kms_setup {%>1<%} else %>0<% } %>
+<% } -%>
+<% if $dispmanx_offline != undef { -%>
+dispmanx_offline=<% if $dispmanx_offline {%>1<%} else %>0<% } %>
+<% } -%>
+

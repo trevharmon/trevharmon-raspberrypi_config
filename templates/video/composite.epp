@@ -1,0 +1,19 @@
+<%- | Optional[Integer] $sdtv_mode,
+      Optional[Integer] $sdtv_aspect,
+      Optional]Boolean] $sdtv_disable_colour_burst,
+      Optional[Boolean] $enable_tvout,
+| -%>
+# [ Composite Video Options ]
+<% if $sdtv_mode != undef { -%>
+sdtv_mode=<%= $sdtv_mode %>
+<% } -%>
+<% if $sdtv_aspect != undef { -%>
+sdtv_aspect=<%= $sdtv_aspect %>
+<% } -%>
+<% if $sdtv_disable_colour_burst != undef { -%>
+sdtv_disable_colour_burst=<% if $sdtv_disable_colour_burst { %>1<% } else { %>0<% } %>
+<% } -%>
+<% if $enable_tvout != undef { -%>
+enable_tvout=<% if $enable_tvout { %>1<% } else { %>0<% } %>
+<% } -%>
+

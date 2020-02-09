@@ -1,0 +1,23 @@
+<%- | Optional[Integer] $gpu_mem,
+      Optional[Integer] $gpu_mem_256,
+      Optional[Integer] $gpu_mem_512,
+      Optional[Integer] $gpu_mem_1024,
+      Variant[Boolean]  $disable_l2cache,
+| -%>
+# [ Memory Options ]
+<% if $gpu_mem != undef { -%>
+gpu_mem=<%= $pgu_mem %>
+<% } -%>
+<% if $gpu_mem_256 != undef { -%>
+gpu_mem_256=<%= $pgu_mem_256 %>
+<% } -%>
+<% if $gpu_mem_512 != undef { -%>
+gpu_mem_512=<%= $pgu_mem_512 %>
+<% } -%>
+<% if $gpu_mem_1024 != undef { -%>
+gpu_mem_1024=<%= $pgu_mem_1024 %>
+<% } -%>
+<% if $disable_l2cache != undef { -%>
+disable_l2cache=<% if $disable_l2cahce { %>1<% } else { %>0<% } %>
+<% } -%>
+

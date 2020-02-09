@@ -1,0 +1,11 @@
+<%- | Array $decode_MPG2,
+      Array $decode_WVC1,
+| -%>
+# [ Licenses and Codec Options ]
+<% if $decode_MPG2 != undef { -%>
+decode_MPG2=<%= join($decode_MPG2, ',') %>
+<% } -%>
+<% if $decode_WVC1 != undef { -%>
+decode_WVC1=<%= join($decode_WVC1, ',') %>
+<% } -%>
+
