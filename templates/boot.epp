@@ -1,0 +1,89 @@
+i<% | Optional[String]  $start_file,
+      Optional[String]  $fixup_file,
+      Optional[Boolean] $start_x,
+      Optional[Boolean] $start_debug,
+      Optional[Boolean] $disable_commandline_tags,
+      Optional[String]  $cmdline,
+      Optional[String]  $kernel,
+      Optional[Boolean] $arm_64bit,
+      Optional[Boolean] $arm_control,
+      Optional[Data]    $kernel_address,
+      Optional[Boolean] $kernel_old,
+      Optional[Array]   $ramfsfile,
+      Optional[Data]    $ramfsaddr,
+      Optional[String]  $initramfs_file,
+      Optional[Data]    $initramfs_addr,
+      Optional[Integer] $init_uart_baud,
+      Optional[Integer] $init_uart_clock,
+      Optional[Integer] $bootcode_delay,
+      Optional[Integer] $boot_delay,
+      Optional[Integer] $boot_delay_ms,
+      Optional[Boolean] $disable_splash,
+      Optional[Boolean] $enable_gic,
+| -%>
+<% if $start_file != undef { -%>
+start_file=<%= $start_file %>
+<% } -%>
+<% if $fixup_file != undef { -%>
+fixup_file=<%= $fixup_file %>
+<% } -%>
+<% if $start_x != undef { -%>
+start_x=<% if $start_x { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $start_debug != undef { -%>
+start_debug=<% if $start_debug { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $disable_commandline_tags != undef { -%>
+disable_commandline_tags=<% if $disable_commandline_tag { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $cmdline != undef { -%>
+cmdline=<%= $cmdline %>
+<% } -%>
+<% if $kernel != undef { -%>
+kernel=<%= $kernel %>
+<% } -%>
+<% if $arm_64bit != undef { -%>
+arm_64bit=<% if $arm_64bit { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $arm_control != undef { -%>
+arm_control=<% if $arm_control { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $kernel_address != undef { -%>
+kernel_address=<%=kernel_address $ %>
+<% } -%>
+<% if $kernel_old != undef { -%>
+kernel_old=<% if $kernel_old { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $ramfsfile != undef { -%>
+ramfsfile=<%= join($ramfsfile, ',') %>
+<% } -%>
+<% if $ramfsaddr != undef { -%>
+ramfsaddr=<%= $ramfsaddr %>
+<% } -%>
+<% if $initramfs_file != undef { -%>
+initramfs_file=<%= $initramfs_file %>
+<% } -%>
+<% if $initramfs_addr != undef { -%>
+initramfs_addr=<%= $initramfs_addr %>
+<% } -%>
+<% if $init_uart_baud != undef { -%>
+init_uart_baud=<%= $init_uart_baud %>
+<% } -%>
+<% if $init_uart_clock != undef { -%>
+init_uart_clock=<%= $init_uart_clock %>
+<% } -%>
+<% if $bootcode_delay != undef { -%>
+bootcode_delay=<%= $bootcode_delay %>
+<% } -%>
+<% if $boot_delay != undef { -%>
+boot_delay=<%= $boot_delay %>
+<% } -%>
+<% if $boot_delay_ms != undef { -%>
+boot_delay_ms=<%= $boot_delay_ms %>
+<% } -%>
+<% if $disable_splash != undef { -%>
+disable_splash=<% if $disable_splash { %>0<% } else { %>1<% } %>
+<% } -%>
+<% if $enable_gic != undef { -%>
+enable_gic=<% if $enable_gic { %>0<% } else { %>1<% } %>
+<% } %>

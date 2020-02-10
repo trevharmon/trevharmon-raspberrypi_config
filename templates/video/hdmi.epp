@@ -14,23 +14,7 @@
      Optional[Integer] $config_hdmi_boost,
      Optional[Integer] $hdmi_group,
      Optional[Integer] $hdmi_mode,
-     Optional[Integer] $hdmi_timings_h_active_pixels,
-     Optional[Boolean] $hdmi_timings_h_sync_polarity,
-     Optional[Integer] $hdmi_timings_h_front_porch,
-     Optional[Integer] $hdmi_timings_h_sync_pulse,
-     Optional[Integer] $hdmi_timings_h_back_porch,
-     Optional[Integer] $hdmi_timings_v_active_lines,
-     Optional[Boolean] $hdmi_timings_v_sync_polarity,
-     Optional[Integer] $hdmi_timings_v_front_porch,
-     Optional[Integer] $hdmi_timings_v_sync_pulse,
-     Optional[Integer] $hdmi_timings_v_back_porch,
-     Optional[Integer] $hdmi_timings_v_sync_offset_a,
-     Optional[Integer] $hdmi_timings_v_sync_offset_b,
-     Optional[Integer] $hdmi_timings_pixel_rep,
-     Optional[Integer] $hdmi_timings_frame_rate,
-     Optional[Integer] $hdmi_timings_interlaced,
-     Optional[Integer] $hdmi_timings_pixel_freq,
-     Optional[Data]    $hdmi_timings_aspect_ratio,
+     Optional[String]  $hdmi_timings,
      Optional[Boolean] $hdmi_force_mode,
      Optional[Integer] $edid_content_type,
      Optional[Boolean] $hdmi_enable_4kp60,
@@ -88,56 +72,8 @@ hdmi_group:<%= $port %>=<%= $hdmi_group %>
 <% if $hdmi_mode != undef { -%>
 hdmi_mode:<%= $port %>=<%= $hdmi_mode %>
 <% } -%>
-<% if $hdmi_timings_h_active_pixels != undef { -%>
-hdmi_timings_h_active_pixels:<%= $port %>=<%= $hdmi_timings_h_active_pixels %>
-<% } -%>
-<% if $hdmi_timings_h_sync_polarity != undef { -%>
-hdmi_timings_h_sync_polarity:<%= $port %>=<% if $hdmi_timings_h_sync_polarity { %>1<% } else { %>0<% } %>
-<% } -%>
-<% if $hdmi_timings_h_front_porch != undef { -%>
-hdmi_timings_h_front_porch:<%= $port %>=<%= $hdmi_timings_h_front_porch %>
-<% } -%>
-<% if $hdmi_timings_h_sync_pulse != undef { -%>
-hdmi_timnings_h_sync_pulse:<%= $port %>=<%= $hdmi_timings_h_sync_pulse %>
-<% } -%>
-<% if $hdmi_timings_h_back_porch != undef { -%>
-hdmi_timings_h_back_porch:<%= $port %>=<%= $hdmi_timings_h_back_porch %>
-<% } -%>
-<% if $hdmi_timings_v_active_lines != undef { -%>
-hdmi_timings_v_active_lines:<%= $port %>=<%= $hdmi_timings_v_active_lines %>
-<% } -%>
-<% if $hdmi_timings_v_sync_polarity != undef { -%>
-hdmi_timings_v_sync_polarity:<%= $port %>=<% if $hdmi_timings_v_sync_polarity { %>1<% } else { %>0<% } %>
-<% } -%>
-<% if $hdmi_timings_v_front_porch != undef { -%>
-hdmi_timings_v_front_porch:<%= $port %>=<%= $hdmi_timings_v_front_porch %>
-<% } -%>
-<% if $hdmi_timings_v_sync_pulse != undef { -%>
-hdmi_timings_v_sync_pulse:<%= $port %>=<%= $hdmi_timings_v_sync_pulse %>
-<% } -%>
-<% if $hdmi_timings_v_back_porch != undef { -%>
-hdmi_timings_v_back_porch:<%= $port %>=<%= $ %>
-<% } -%>
-<% if $hdmi_timings_v_sync_offset_a != undef { -%>
-hdmi_timings_v_sync_offset_a:<%= $port %>=<%= $hdmi_timings_v_sync_offset_a %>
-<% } -%>
-<% if $hdmi_timings_v_sync_offset_b != undef { -%>
-hdmi_timings_v_sync_offset_b:<%= $port %>=<%= $hdmi_timings_v_sync_offset_b %>
-<% } -%>
-<% if $hdmi_timings_pixel_rep != undef { -%>
-hdmi_timings_pixel_rep:<%= $port %>=<%= $hdmi_timings_pixel_rep %>
-<% } -%>
-<% if $hdmi_timings_frame_rate != undef { -%>
-hdmi_timings_frome_rate:<%= $port %>=<%= $ %>
-<% } -%>
-<% if $hdmi_timings_interlaced != undef { -%>
-hdmi_timings_interlaced:<%= $port %>=<%= $hdmi_timings_interlaced %>
-<% } -%>
-<% if $hdmi_timings_pixel_freq != undef { -%>
-hdmi_timings_pixel_freq:<%= $port %>=<%= $hdmi_timings_pixel_freq %>
-<% } -%>
-<% if $hdmi_timings_aspect_ratio != undef { -%>
-hdmi_timings_aspect_ratio:<%= $port %>=<%= $hdmi_timings_aspect_ratio %>
+<% if $hdmi_timings != undef { -%>
+hdmi_timings:<%= $port %>=<%= $hdmi_timings %>
 <% } -%>
 <% if $hdmi_force_mode != undef { -%>
 hdmi_force_mode:<%= $port %>=<% if $hdmi_force_mode { %>1<% } else { %>0<% } %>
@@ -168,5 +104,4 @@ hdmi_cvt_interface:<%= $port %>=<%= $hdmi_cvt_interface %>
 <% } -%>
 <% if $hdmi_cvt_rb != undef { -%>
 hdmi_cvt_rb:<%= $port %>=<%= $hdmi_cvt_rb %>
-<% } -%>
-
+<% } %>

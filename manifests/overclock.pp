@@ -6,6 +6,25 @@
 #   include raspberrypi_config
 class raspberrypi_config::overclock {
 
+  $force_turbo = $::raspberrypi_config::force_turbo ? {
+    Undef   => undef,
+    0       => false,
+    1       => true,
+    default => $::raspberrypi_config::force_turbo,
+  }
+  $never_over_voltage = $::raspberrypi_config::never_over_voltage ? {
+    Undef   => undef,
+    0       => false,
+    1       => true,
+    default => $::raspberrypi_config::never_over_voltage,
+  }
+  $disable_auto_turbo = $::raspberrypi_config::disable_auto_turbo ? {
+    Undef   => undef,
+    0       => false,
+    1       => true,
+    default => $::raspberrypi_config::disable_auto_turbo,
+  }
+
   concat::fragment { "${config_file} Overclock":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/overclock.epp', {
@@ -21,7 +40,7 @@ class raspberrypi_config::overclock {
       'over_voltage_sdram_c' => $::raspberrypi_config::over_voltage_sdram_c,
       'over_voltage_sdram_i' => $::raspberrypi_config::over_voltage_sdram_i,
       'over_voltage_sdram_p' => $::raspberrypi_config::over_voltage_sdram_p,
-      'force_turbo'          => $::raspberrypi_config::force_turbo,
+      'force_turbo'          => $force_turbo,
       'initial_turbo'        => $::raspberrypi_config::initial_turbo,
       'arm_freq_min'         => $::raspberrypi_config::arm_freq_min,
       'core_freq_min'        => $::raspberrypi_config::core_freq_min,
@@ -33,8 +52,8 @@ class raspberrypi_config::overclock {
       'over_voltage_min'     => $::raspberrypi_config::over_voltage_min,
       'temp_limit'           => $::raspberrypi_config::temp_limit,
       'temp_soft_limit'      => $::raspberrypi_config::temp_soft_limit,
-      'never_over_voltage'   => $::raspberrypi_config::nver_over_voltage,
-      'disable_auto_turbo'   => $::raspberrypi_config::disable_auto_turbo,
+      'never_over_voltage'   => $never_over_voltage,
+      'disable_auto_turbo'   => $disable_auto_turbo,
     }),
     order   => '700',
   }

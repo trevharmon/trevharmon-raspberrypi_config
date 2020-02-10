@@ -1,0 +1,8 @@
+<% | Hash $gpio,
+| -%>
+# [ GPIO Options ]
+<% $gpio.each |String $key, Optional[Array] $value| { -%>
+<% if $value != undef { -%>
+gpio=<%= $key %>=<%= join($value, ',') %>
+<% } -%>
+<% } %>

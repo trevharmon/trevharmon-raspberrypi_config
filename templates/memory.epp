@@ -19,5 +19,4 @@ gpu_mem_1024=<%= $pgu_mem_1024 %>
 <% } -%>
 <% if $disable_l2cache != undef { -%>
 disable_l2cache=<% if $disable_l2cahce { %>1<% } else { %>0<% } %>
-<% } -%>
-
+<% } %>

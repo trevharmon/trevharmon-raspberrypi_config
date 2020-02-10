@@ -175,7 +175,7 @@ class raspberrypi_config (
   Variant[Boolean,Integer[0,1],Undef]         $start_debug,
   Variant[Boolean,Integer[0,1],Undef]         $disable_commandline_tags,
   Variant[String]                             $cmdline,
-  Variant[String]]                            $kernel,
+  Variant[String]                             $kernel,
   Variant[Boolean,Integer[0,1],Undef]         $arm_64bit,
   Variant[Boolean,Integer[0,1],Undef]         $arm_control,
   Optional[Regexp[/^0x[a-fA-Z\d]{4,8}$/]]     $kernel_address,

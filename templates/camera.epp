@@ -1,0 +1,7 @@
+<% | Optional[Boolean] $disable_camera_led,
+| -%>
+# [ Camera Options ]
+<% if $disable_camera_led { -%>
+disable_camera_led=<% if $disable_camera_led {%>1<% } else { %>0<% } %>
+<% } %>
+

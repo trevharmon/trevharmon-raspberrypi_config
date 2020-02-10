@@ -6,23 +6,33 @@
      Optional[Boolean] $enable_dpi_lcd,
      Optional[Integer] $dpi_group,
      Optional[Integer] $dpi_mode,
-     Optional[Integer] $dpi_timings_h_active_pixels,
-     Optional[Boolean] $dpi_timings_h_sync_polarity,
-     Optional[Integer] $dpi_timings_h_front_porch,
-     Optional[Integer] $dpi_timings_h_sync_pulse,
-     Optional[Integer] $dpi_timings_h_back_porch,
-     Optional[Integer] $dpi_timings_v_active_lines,
-     Optional[Boolean] $dpi_timings_v_sync_polarity,
-     Optional[Integer] $dpi_timings_v_front_porch,
-     Optional[Integer] $dpi_timings_v_sync_pulse,
-     Optional[Integer] $dpi_timings_v_back_porch,
-     Optional[Integer] $dpi_timings_v_sync_offset_a,
-     Optional[Integer] $dpi_timings_v_sync_offset_b,
-     Optional[Integer] $dpi_timings_pixel_rep,
-     Optional[Integer] $dpi_timings_frame_rate,
-     Optional[Integer] $dpi_timings_interlaced,
-     Optional[Integer] $dpi_timings_pixel_freq,
-     Optional[Data]    $dpi_timings_aspect_ratio,
+     Optional[String]  $dpi_timings,
 | -%>
 # [ LCD Display Options ]
-
+<% if $ignore_lcd != undef { -%>
+ignore_lcd=<% if $ignore_lcd { %>1<% } else { %>0<% }%>
+<% } -%>
+<% if $display_default_lcd != undef { -%>
+display_default_lcd=<% if $display_default_lcd { %>1<% } else { %>0<% }%>
+<% } -%>
+<% if $lcd_frames != undef { -%>
+lcd_frames=<%= $lcd_frames %>
+<% } -%>
+<% if $lcd_rotate != undef { -%>
+lcd_rotate=<%= $lcd_rotate %>
+<% } -%>
+<% if $disable_touchscreen != undef { -%>
+disable_touchscreen=<% if $disable_touchscreen { %>1<% } else { %>0<% }%>
+<% } -%>
+<% if $enable_dpi_lcd != undef { -%>
+enable_dpi_lcd=<% if $enable_dpi_lcd { %>1<% } else { %>0<% }%>
+<% } -%>
+<% if $dpi_group != undef { -%>
+dpi_group=<%= $dpi_group %>
+<% } -%>
+<% if $dpi_mode != undef { -%>
+dpi_mode=<%=dpi_mode $ %>
+<% } -%>
+<% if $dpi_timings != undef { -%>
+dpi_timings=<%= $dpi_timings %>
+<% } %>

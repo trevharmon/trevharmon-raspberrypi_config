@@ -83,5 +83,4 @@ disable_fw_kms_setup=<% if $disable_fw_kms_setup {%>1<%} else %>0<% } %>
 <% } -%>
 <% if $dispmanx_offline != undef { -%>
 dispmanx_offline=<% if $dispmanx_offline {%>1<%} else %>0<% } %>
-<% } -%>
-
+<% } %>

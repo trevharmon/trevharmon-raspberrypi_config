@@ -1,0 +1,14 @@
+<% | Optional[Integer] $avoid_warnings,
+     Optional[String]  $logging_level,
+     Optional[String]  $include,
+| -%>
+# [ Miscellaneous Options ]
+<% if $avoid_warnings { -%>
+avoid_warnings=<%= $avoid_warnings %>
+<% } -%>
+<% if $logging_level { -%>
+logging_level=<%= $logging_level %>
+<% } -%>
+<% if $include { -%>
+include=<%= $include %>
+<% } %>

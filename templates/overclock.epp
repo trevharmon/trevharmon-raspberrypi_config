@@ -1,0 +1,106 @@
+<% | Optional[Integer] $arm_freq,
+     Optional[Integer] $gpu_freq,
+     Optional[Integer] $core_freq,
+     Optional[Integer] $h264_freq,
+     Optional[Integer] $isp_freq,
+     Optional[Integer] $v3d_freq,
+     Optional[Integer] $sdram_freq,
+     Optional[Integer] $over_voltage,
+     Optional[Integer] $over_voltage_sdram,
+     Optional[Integer] $over_voltage_sdram_c,
+     Optional[Integer] $over_voltage_sdram_i,
+     Optional[Integer] $over_voltage_sdram_p,
+     Optional[Boolean] $force_turbo,
+     Optional[Integer] $initial_turbo,
+     Optional[Integer] $arm_freq_min,
+     Optional[Integer] $core_freq_min,
+     Optional[Integer] $gpu_freq_min,
+     Optional[Integer] $h264_freq_min,
+     Optional[Integer] $isp_freq_min,
+     Optional[Integer] $v3d_freq_min,
+     Optional[Integer] $sdram_freq_min,
+     Optional[Integer] $over_voltage_min,
+     Optional[Integer] $temp_limit,
+     Optional[Integer] $temp_soft_limit,
+     Optional[Boolean] $never_over_voltage,
+     Optional[Boolean] $disable_auto_turbo,
+| -%>
+# [ Overclocking Options ]
+<% if $arm_freq != undef { -%>
+arm_freq=<%= $arm_freq %>
+<% } -%>
+<% if $gpu_freq != undef { -%>
+gpu_freq=<%= $gpu_freq %>
+<% } -%>
+<% if $core_freq != undef { -%>
+core_freq=<%= $core_freq %>
+<% } -%>
+<% if $h264_freq != undef { -%>
+h264_freq=<%= $h264_freq %>
+<% } -%>
+<% if $isp_freq != undef { -%>
+isp_freq=<%= $isp_freq %>
+<% } -%>
+<% if $v3d_freq != undef { -%>
+v3d_freq=<%= $v3d_freq %>
+<% } -%>
+<% if $sdram_freq != undef { -%>
+sdram_freq=<%= $sdram_freq %>
+<% } -%>
+<% if $over_voltage != undef { -%>
+over_voltage=<%= $over_voltage %>
+<% } -%>
+<% if $over_voltage_sdram != undef { -%>
+over_voltage_sdram=<%= $over_voltage_sdram %>
+<% } -%>
+<% if $over_voltage_sdram_c != undef { -%>
+over_voltage_sdram_c=<%= $over_voltage_sdram_c %>
+<% } -%>
+<% if $over_voltage_sdramPi != undef { -%>
+over_voltage_sdram_i=<%= $over_voltage_sdram_i %>
+<% } -%>
+<% if $over_voltage_sdram_p != undef { -%>
+over_voltage_sdram_p=<%= $over_voltage_sdram_p %>
+<% } -%>
+<% if $force_turbo != undef { -%>
+force_turbo=<% if $force_turbo {%>1<% } else { %>0<% } %>
+<% } -%>
+<% if $initial_turbo != undef { -%>
+initial_turbo=<%= $initial_turbo %>
+<% } -%>
+<% if $arm_freq_min != undef { -%>
+arm_freq_min=<%= $arm_freq_min %>
+<% } -%>
+<% if $core_freq_min != undef { -%>
+core_freq_min=<%= $core_freq_min %>
+<% } -%>
+<% if $gpu_freq_min != undef { -%>
+gpu_freq_min=<%= $gpu_freq_min %>
+<% } -%>
+<% if $h264_freq_min != undef { -%>
+h264_freq_min=<%= $h264_freq_min %>
+<% } -%>
+<% if $isp_freq_min != undef { -%>
+isp_freq_min=<%= $isp_freq_min %>
+<% } -%>
+<% if $v3d_freq_min != undef { -%>
+v3d_freq_min=<%= $v3d_freq_min %>
+<% } -%>
+<% if $sdram_freq_min != undef { -%>
+sdram_freq_min=<%= $sdram_freq_min %>
+<% } -%>
+<% if $over_voltage_min != undef { -%>
+over_voltage_min=<%= $over_voltage_min %>
+<% } -%>
+<% if $temp_limit != undef { -%>
+temp_limit=<%= $temp_limit %>
+<% } -%>
+<% if $temp_soft_limit != undef { -%>
+temp_soft_limit=<%= $temp_soft_limit %>
+<% } -%>
+<% if $never_over_voltage != undef { -%>
+never_over_voltage=<% if $never_over_voltage {%>1<% } else { %>0<% } %>
+<% } -%>
+<% if $disable_auto_turbo != undef { -%>
+disable_auto_turbo=<% if $ {%>1<% } else { %>0<% } %>
+<% } %>

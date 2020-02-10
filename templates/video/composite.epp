@@ -15,5 +15,4 @@ sdtv_disable_colour_burst=<% if $sdtv_disable_colour_burst { %>1<% } else { %>0<
 <% } -%>
 <% if $enable_tvout != undef { -%>
 enable_tvout=<% if $enable_tvout { %>1<% } else { %>0<% } %>
-<% } -%>
-
+<% } %>
