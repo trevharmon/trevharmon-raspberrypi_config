@@ -18,6 +18,9 @@ class raspberrypi_config::video::composite {
     1       => true,
     default => $::raspberrypi_config::enable_tvout,
   }
+  if $enable_tvout and ($::raspberrypi_config::model_type != 'B' or $::raspberrypi_config::model_version != 4) {
+    rapsberrypi_config::waring{ 'The enable_tvout feature is only available on Pi 4B models': }
+  }
 
   concat::fragment { "${config_file} Video Composite":
     source  => $::raspberrypi_config::config_file,

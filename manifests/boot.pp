@@ -66,7 +66,7 @@ class raspberrypi_config::boot {
 
   if ($startup_file == undef and $fixup_file != undef) or 
      ($startup_file != undef and $fixup_file == undef) {
-    raspberrypi_config::warning{ 'startup_file and fixup_file must either both be defined or undefined': }
+    fail('startup_file and fixup_file must either both be defined or undefined')
   }
   if $arm_control {
     raspberrypi_config::warning{ 'arm_control has been DEPRECATED, use arm_64bit to enable 64-bit kernels': }
@@ -82,7 +82,7 @@ class raspberrypi_config::boot {
     raspberrypi_config::warning{ 'A ramdisk should either be defined using ramfsfile/ramfsaddr or initramfs_file/initramfs_addr': }
   }
   if $enable_gic and ($::raspberrypi_config::model_type != 'B' or $::raspberrypi_config::model_version != 4) {
-    rapsberrypi_config::waring{ 'The enable_gic feature is only available on Pi 4B modiles': }
+    rapsberrypi_config::waring{ 'The enable_gic feature is only available on Pi 4B models': }
   }
 
   concat::fragment { "${config_file} Boot":

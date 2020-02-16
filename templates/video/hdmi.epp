@@ -9,7 +9,7 @@
      Optional[Boolean] $hdmi_ignore_cec,
      Optional[String]  $cec_osd_name,
      Optional[Integer] $hdmi_pixel_encoding,
-     Optional[Integer] $hdmi_blanking,
+     Optional[Boolean] $hdmi_blanking,
      Optional[Integer] $hdmi_drive,
      Optional[Integer] $config_hdmi_boost,
      Optional[Integer] $hdmi_group,
@@ -57,8 +57,8 @@ cec_osd_name:<%= $port %>=<%= $cec_osd_name %>
 <% if $hdmi_pixel_encoding != undef { -%>
 hdmi_pixel_encoding:<%= $port %>=<%= $hdmi_pixel_encoding %>
 <% } -%>
-<% if $hdmi_blanking != undef { -%>
-hdmi_blanking:<%= $port %>=<%= $hdmi_blanking %>
+<% if $hdmi_blanking { -%>
+hdmi_blanking:<%= $port %>=<% if $hdmi_blanking { %>1<% } else { %>0<% } %>
 <% } -%>
 <% if $hdmi_drive != undef { -%>
 hdmi_drive:<%= $port %>=<%= $hdmi_drive %>

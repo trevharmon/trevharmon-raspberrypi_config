@@ -8,6 +8,9 @@ class raspberrypi_config::video::hdmi0 {
 
   $port = 0
 
+  if $port > 0 and ($::raspberrypi_config::model_type != 'B' or $::raspberrypi_config::model_version != 4) {
+    rapsberrypi_config::waring{ 'Multiple HDMI ports are only available on Pi 4B models': }
+  }
   $hdmi_ignore_edid = $::raspberrypi_config::hdmi_ignore_edid_0 ? {
     undef   => undef,
     0       => false,
@@ -49,6 +52,12 @@ class raspberrypi_config::video::hdmi0 {
     0       => false,
     1       => true,
     default => $::raspberrypi_config::hdmi_ignore_cec_0,
+  }
+  $hdmi_blanking = $::raspberrypi_config::hdmi_blanking_0 ? {
+    undef   => undef,
+    0       => false,
+    1       => true,
+    default => $::raspberrypi_config::hdmi_blanking_0,
   }
   $hdmi_timings_h_sync_polarity = $::raspberrypi_config::hdmi_timings_h_sync_polarity_0 ? {
     undef   => undef,
@@ -180,8 +189,14 @@ class raspberrypi_config::video::hdmi0 {
   else {
     $hdmi_timings = undef
   }
+  if $hdmi_blanking and $::raspberrypi_config::model_version == 4 {
+    rapsberrypi_config::waring{ 'The hdmi_blanking_0 feature is not available on Pi 4 models': }
+  }
+  if $hdmi_enable_4kp60 and ($::raspberrypi_config::model_type != 'B' or $::raspberrypi_config::model_version != 4) {
+    rapsberrypi_config::waring{ 'The hdmi_enable_4kp60 feature is only available on Pi 4B models': }
+  }
 
-  concat::fragment { "${config_file} Video HDMI:0":
+  concat::fragment { "${config_file} Video HDMI:${port}":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi/video/hdmi.epp', {
       'port'                   => port,
@@ -195,7 +210,7 @@ class raspberrypi_config::video::hdmi0 {
       'hdmi_ignore_cec'        => $hdmi_ignore_cec,
       'cec_osd_name'           => $::raspberrypi_config::cec_osd_name_0,
       'hdmi_pixel_encoding'    => $::raspberrypi_config::hdmi_pixel_encoding_0,
-      'hdmi_blanking'          => $::raspberrypi_config::hdmi_blanking_0,
+      'hdmi_blanking'          => $hdmi_blanking,
       'hdmi_drive'             => $::raspberrypi_config::hdmi_drive_0,
       'config_hdmi_boost'      => $::raspberrypi_config::config_hdmi_boost_0,
       'hdmi_group'             => $::raspberrypi_config::hdmi_group_0,
@@ -203,7 +218,7 @@ class raspberrypi_config::video::hdmi0 {
       'hdmi_timings'           => $hdmi_timings,
       'hdmi_force_mode'        => $hdmi_force_mode,
       'edid_content_type'      => $::raspberrypi_config::hdmi_content_type_0,
-      'hdmi_enable_4kp60'      => $hdmi_enable_rkp60,
+      'hdmi_enable_4kp60'      => $hdmi_enable_4kp60,
       'hdmi_cvt_width'         => $::raspberrypi_config::hdmi_cvt_width_0,
       'hdmi_cvt_height'        => $::raspberrypi_config::hdmi_cvt_height_0,
       'hdmi_cvt_framerate'     => $::raspberrypi_config::hdmi_cvt_framerate_0,
