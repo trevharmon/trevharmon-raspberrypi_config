@@ -22,7 +22,7 @@ Facter.add('raspberry_pi_model') do
     '0013'   => { 'release_date' => 'Q1 2015',  'model' => 'B+',                              'pcb_revision' => '1.2', 'memory' => '512 MB',          'manufacturer' => 'Embest'     },
     '0014'   => { 'release_date' => 'Q2 2014',  'model' => 'Compute Module 1',                'pcb_revision' => '1.0', 'memory' => '512 MB',          'manufacturer' => 'Embest'     },
     '0015'   => {                               'model' => 'A+',                              'pcb_revision' => '1.1', 'memory' => '256 MB / 512 MB', 'manufacturer' => 'Embest'     },
-    'a01040' => { 'release_date' => 'Unknown',  'model' => '2 Model B',                       'pcb_revision' => '1.0', 'memory' => '1 GB',            'manufacturer' => 'Sony'       },
+    'a01040' => {                               'model' => '2 Model B',                       'pcb_revision' => '1.0', 'memory' => '1 GB',            'manufacturer' => 'Sony'       },
     'a01041' => { 'release_date' => 'Q1 2015',  'model' => '2 Model B',                       'pcb_revision' => '1.1', 'memory' => '1 GB',            'manufacturer' => 'Sony'       },
     'a21041' => { 'release_date' => 'Q1 2015',  'model' => '2 Model B',                       'pcb_revision' => '1.1', 'memory' => '1 GB',            'manufacturer' => 'Embest'     },
     'a22042' => { 'release_date' => 'Q3 2016',  'model' => '2 Model B (with BCM2837)',        'pcb_revision' => '1.2', 'memory' => '1 GB',            'manufacturer' => 'Embest'     },
@@ -51,6 +51,60 @@ Facter.add('raspberry_pi_model') do
   fact = {}
   if data.key?(revision)
     fact = data[revision]
+
+    if model == 'B (Beta)'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 1
+    elsif model == 'B'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 1
+    elsif model == 'B (ECN0001)'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 1
+    elsif model == 'A'
+      fact[ 'model_type'    ] = 'A'
+      fact[ 'model_version' ] = 1
+    elsif model == 'B+'
+      fact[ 'model_type'    ] = 'B+'
+      fact[ 'model_version' ] = 1
+    elsif model == 'Compute Module 1'
+      fact[ 'model_type'    ] = ''
+      fact[ 'model_version' ] = 1
+    elsif model == 'A+'
+      fact[ 'model_type'    ] = 'A+'
+      fact[ 'model_version' ] = 1
+    elsif model == '2 Model B'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 2
+    elsif model == '2 Model B (with BCM2837)'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 2
+    elsif model == 'Zero'
+      fact[ 'model_type'    ] = ''
+      fact[ 'model_version' ] = 0
+    elsif model == 'Zero W'
+      fact[ 'model_type'    ] = 'W'
+      fact[ 'model_version' ] = 0
+    elsif model == '3 Model B'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 3
+    elsif model == 'Compute Module 3 (and CM3 Lite)'
+      fact[ 'model_type'    ] = ''
+      fact[ 'model_version' ] = 3
+    elsif model == '3 Model B+'
+      fact[ 'model_type'    ] = 'B+'
+      fact[ 'model_version' ] = 3
+    elsif model == '3 Model A+'
+      fact[ 'model_type'    ] = 'A+'
+      fact[ 'model_version' ] = 3
+    elsif model == 'Compute Module 3+'
+      fact[ 'model_type'    ] = ''
+      fact[ 'model_version' ] = 3
+    elsif model == '4 Model B'
+      fact[ 'model_type'    ] = 'B'
+      fact[ 'model_version' ] = 4
+    end
+
   end
   fact[ 'hardware' ] = hardware
   fact[ 'revision' ] = revision
