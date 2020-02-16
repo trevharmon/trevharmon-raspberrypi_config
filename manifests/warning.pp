@@ -1,6 +1,6 @@
 define raspberrypi_conifg::warning (
   String  $message          = $itle,
-  Boolean $show_warning     = $::raspberrypi_config::show_warnings;
+  Boolean $show_warning     = $::raspberrypi_config::show_warnings,
   Boolean $warning_as_error = $::raspberrypi_config::warnings_as_errors,
 ) {
 

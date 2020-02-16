@@ -115,10 +115,11 @@ class raspberrypi_config::video::lcd {
           $::rasberrypi_config::dpi_timings_aspect_ratio,
         ], ' '
       )
-   }
-   else {
+    }
+  }
+  else {
      $dpi_timings = undef
-   }
+  }
 
   concat::fragment { "${config_file} Video LCD":
     source  => $::raspberrypi_config::config_file,

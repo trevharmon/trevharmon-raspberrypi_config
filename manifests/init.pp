@@ -78,7 +78,7 @@ class raspberrypi_config (
   Optional[String]                            $hdmi_edid_filename_1           = undef,
   Variant[Boolean,Integer[0,1],Undef]         $hdmi_force_edid_audio_1        = undef,
   Variant[Boolean,Integer[0,1],Undef]         $hdmi_ignore_edid_audio_1       = undef,
-  Variant[Boolean,Integer[0,1],Undef]         $hdmi_force_edid_3d_  1         = undef,
+  Variant[Boolean,Integer[0,1],Undef]         $hdmi_force_edid_3d_1           = undef,
   Variant[Boolean,Integer[0,1],Undef]         $hdmi_ignore_cec_init_1         = undef,
   Variant[Boolean,Integer[0,1],Undef]         $hdmi_ignore_cec_1              = undef,
   Optional[String]                            $cec_osd_name_1                 = undef,
@@ -103,7 +103,7 @@ class raspberrypi_config (
   Optional[Enum[0]]                           $hdmi_timings_pixel_rep_1       = undef,
   Optional[Integer[1]]                        $hdmi_timings_frame_rate_1      = undef,
   Optional[Enum[0]]                           $hdmi_timings_interlaced_1      = undef,
-  Optional[Integer[1]]                        $hdmi_timings_pixel_freq _1     = undef,
+  Optional[Integer[1]]                        $hdmi_timings_pixel_freq_1      = undef,
   Variant[Integer[1,8],Enum['4:3','14:9','16:9','5:4','16:10','15:9','21:9','64:27'],Undef]
                                               $hdmi_timings_aspect_ratio_1    = undef,
   Variant[Boolean,Integer[0,1],Undef]         $hdmi_force_mode_1              = undef,
@@ -194,88 +194,88 @@ class raspberrypi_config (
   Variant[Boolean,Integer[0,1],Undef]         $enable_gic                     = undef,
   # GPIO control
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_0                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_1                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_2                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_3                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_4                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_5                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_6                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_7                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_8                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_9                         = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_10                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_11                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_12                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_13                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_14                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_15                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_16                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_17                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_18                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_19                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_20                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_21                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_22                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_23                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_24                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_25                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_26                        = undef,
   Variant[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],
-    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np'],Undef]
+    Array[Enum['ip','op','a0','a1','a2','a3','a4','a5','dh','dl','pu','pd','pn','np']],Undef]
                                               $gpio_27                        = undef,
   # Overcloacking options
   Optional[Integer[1]]                        $arm_freq                       = undef,

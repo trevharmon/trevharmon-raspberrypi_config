@@ -6,7 +6,7 @@
 #   include raspberrypi_config
 class raspberrypi_config::gpio {
 
-  $data => {
+  $data = {
     '0'  => $::raspberrypi_config::gpio_0 ?
             { Enum => [ $::raspberrypi_config::gpio_0  ], Array => $::raspberrypi_config::gpio_0,  default => undef },
     '1'  => $::raspberrypi_config::gpio_1 ?
@@ -63,7 +63,7 @@ class raspberrypi_config::gpio {
             { Enum => [ $::raspberrypi_config::gpio_26 ], Array => $::raspberrypi_config::gpio_26, default => undef },
     '27' => $::raspberrypi_config::gpio_27 ?
             { Enum => [ $::raspberrypi_config::gpio_27 ], Array => $::raspberrypi_config::gpio_27, default => undef },
-  |
+  }
 
   concat::fragment { "${config_file} GPIO":
     source  => $::raspberrypi_config::config_file,
