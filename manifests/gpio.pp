@@ -65,7 +65,7 @@ class raspberrypi_config::gpio {
             { Enum => [ $::raspberrypi_config::gpio_27 ], Array => $::raspberrypi_config::gpio_27, default => undef },
   }
 
-  concat::fragment { "${config_file} GPIO":
+  concat::fragment { "${::raspberrypi_config::config_file} GPIO":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/gpio.epp', {
       'gpio' => $data,

@@ -6,7 +6,7 @@
 #   include raspberrypi_config
 class raspberrypi_config::misc {
 
-  concat::fragment { "${config_file} Misc":
+  concat::fragment { "${::raspberrypi_config::config_file} Misc":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/misc.epp', {
       'avoid_warnings' => $::raspberrypi_config::avoid_warnings,

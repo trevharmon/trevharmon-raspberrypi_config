@@ -124,41 +124,41 @@ class raspberrypi_config::video::hdmi1 {
     default => $::raspberrypi_config::hdmi_cvt_rb_1,
   }
 
-  if $::raspberrypi_config::hdmi_timing_h_active_pixels_1 != undef or
-     $::raspberrypi_config::hdmi_timing_h_sync_polarity_1 != undef or
-     $::raspberrypi_config::hdmi_timing_h_front_porch_1   != undef or
-     $::raspberrypi_config::hdmi_timing_h_sync_pulse_1    != undef or
-     $::raspberrypi_config::hdmi_timing_h_back_portch_1   != undef or
-     $::raspberrypi_config::hdmi_timing_v_active_lines_1  != undef or
-     $::raspberrypi_config::hdmi_timing_v_sync_polarity_1 != undef or
-     $::raspberrypi_config::hdmi_timing_v_front_porch_1   != undef or
-     $::raspberrypi_config::hdmi_timing_v_sync_pulse_1    != undef or
-     $::raspberrypi_config::hdmi_timing_v_back_porch_1    != undef or
-     $::raspberrypi_config::hdmi_timing_v_sync_offset_a_1 != undef or
-     $::raspberrypi_config::hdmi_timing_v_sync_offset_b_1 != undef or
-     $::raspberrypi_config::hdmi_timing_pixel_rep_1       != undef or
-     $::raspberrypi_config::hdmi_timing_frame_rate_1      != undef or
-     $::raspberrypi_config::hdmi_timing_interlaced_1      != undef or
-     $::raspberrypi_config::hdmi_timing_pixel_freq_1      != undef or
-     $::raspberrypi_config::hdmi_timing_aspect_ratio_1    != undef
+  if  $::raspberrypi_config::hdmi_timing_h_active_pixels_1 != undef or
+      $::raspberrypi_config::hdmi_timing_h_sync_polarity_1 != undef or
+      $::raspberrypi_config::hdmi_timing_h_front_porch_1   != undef or
+      $::raspberrypi_config::hdmi_timing_h_sync_pulse_1    != undef or
+      $::raspberrypi_config::hdmi_timing_h_back_portch_1   != undef or
+      $::raspberrypi_config::hdmi_timing_v_active_lines_1  != undef or
+      $::raspberrypi_config::hdmi_timing_v_sync_polarity_1 != undef or
+      $::raspberrypi_config::hdmi_timing_v_front_porch_1   != undef or
+      $::raspberrypi_config::hdmi_timing_v_sync_pulse_1    != undef or
+      $::raspberrypi_config::hdmi_timing_v_back_porch_1    != undef or
+      $::raspberrypi_config::hdmi_timing_v_sync_offset_a_1 != undef or
+      $::raspberrypi_config::hdmi_timing_v_sync_offset_b_1 != undef or
+      $::raspberrypi_config::hdmi_timing_pixel_rep_1       != undef or
+      $::raspberrypi_config::hdmi_timing_frame_rate_1      != undef or
+      $::raspberrypi_config::hdmi_timing_interlaced_1      != undef or
+      $::raspberrypi_config::hdmi_timing_pixel_freq_1      != undef or
+      $::raspberrypi_config::hdmi_timing_aspect_ratio_1    != undef
   {
-    if $::raspberrypi_config::hdmi_timing_h_active_pixels_1 == undef or
-       $::raspberrypi_config::hdmi_timing_h_sync_polarity_1 == undef or
-       $::raspberrypi_config::hdmi_timing_h_front_porch_1   == undef or
-       $::raspberrypi_config::hdmi_timing_h_sync_pulse_1    == undef or
-       $::raspberrypi_config::hdmi_timing_h_back_portch_1   == undef or
-       $::raspberrypi_config::hdmi_timing_v_active_lines_1  == undef or
-       $::raspberrypi_config::hdmi_timing_v_sync_polarity_1 == undef or
-       $::raspberrypi_config::hdmi_timing_v_front_porch_1   == undef or
-       $::raspberrypi_config::hdmi_timing_v_sync_pulse_1    == undef or
-       $::raspberrypi_config::hdmi_timing_v_back_porch_1    == undef or
-       $::raspberrypi_config::hdmi_timing_v_sync_offset_a_1 == undef or
-       $::raspberrypi_config::hdmi_timing_v_sync_offset_b_1 == undef or
-       $::raspberrypi_config::hdmi_timing_pixel_rep_1       == undef or
-       $::raspberrypi_config::hdmi_timing_frame_rate_1      == undef or
-       $::raspberrypi_config::hdmi_timing_interlaced_1      == undef or
-       $::raspberrypi_config::hdmi_timing_pixel_freq_1      == undef or
-       $::raspberrypi_config::hdmi_timing_aspect_ratio_1    == undef
+    if  $::raspberrypi_config::hdmi_timing_h_active_pixels_1 == undef or
+        $::raspberrypi_config::hdmi_timing_h_sync_polarity_1 == undef or
+        $::raspberrypi_config::hdmi_timing_h_front_porch_1   == undef or
+        $::raspberrypi_config::hdmi_timing_h_sync_pulse_1    == undef or
+        $::raspberrypi_config::hdmi_timing_h_back_portch_1   == undef or
+        $::raspberrypi_config::hdmi_timing_v_active_lines_1  == undef or
+        $::raspberrypi_config::hdmi_timing_v_sync_polarity_1 == undef or
+        $::raspberrypi_config::hdmi_timing_v_front_porch_1   == undef or
+        $::raspberrypi_config::hdmi_timing_v_sync_pulse_1    == undef or
+        $::raspberrypi_config::hdmi_timing_v_back_porch_1    == undef or
+        $::raspberrypi_config::hdmi_timing_v_sync_offset_a_1 == undef or
+        $::raspberrypi_config::hdmi_timing_v_sync_offset_b_1 == undef or
+        $::raspberrypi_config::hdmi_timing_pixel_rep_1       == undef or
+        $::raspberrypi_config::hdmi_timing_frame_rate_1      == undef or
+        $::raspberrypi_config::hdmi_timing_interlaced_1      == undef or
+        $::raspberrypi_config::hdmi_timing_pixel_freq_1      == undef or
+        $::raspberrypi_config::hdmi_timing_aspect_ratio_1    == undef
     {
       fail("HDMI:${port} timings must have all items specified if any are specified.")
     }
@@ -196,7 +196,7 @@ class raspberrypi_config::video::hdmi1 {
     rapsberrypi_config::waring{ 'The hdmi_enable_4kp60 feature is only available on Pi 4B models': }
   }
 
-  concat::fragment { "${config_file} Video HDMI:${port}":
+  concat::fragment { "${::raspberrypi_config::config_file} Video HDMI:${port}":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi/video/hdmi.epp', {
       'port'                   => port,

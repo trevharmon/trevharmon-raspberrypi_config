@@ -25,7 +25,7 @@ class raspberrypi_config::overclock {
     default => $::raspberrypi_config::disable_auto_turbo,
   }
 
-  concat::fragment { "${config_file} Overclock":
+  concat::fragment { "${raspberrypi_config::config_file} Overclock":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/overclock.epp', {
       'arm_freq'             => $::raspberrypi_config::arm_freq,

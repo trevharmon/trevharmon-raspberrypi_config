@@ -17,9 +17,9 @@ class raspberrypi_config (
   Variant[Boolean,Integer[0,1],Undef]         $disable_l2cache                = undef,
   # License key and codec options
   Variant[Regexp[/^0x[a-fA-Z\d]{8}$/],Array[Regexp[/^0x[a-fA-Z\d]{8}$/],0,8],Undef]
-                                              $decode_MPG2                    = undef,
+                                              $decode_mpg2                    = undef,
   Variant[Regexp[/^0x[a-fA-Z\d]{8}$/],Array[Regexp[/^0x[a-fA-Z\d]{8}$/],0,8],Undef]
-                                              $decode_WVC1                    = undef,
+                                              $decode_wvc1                    = undef,
   # Video options
   # - Composite video mode options
   Optional[Enum[0,1,2,3,16,18]]               $sdtv_mode                      = undef,
@@ -334,7 +334,7 @@ class raspberrypi_config (
     mode   => '0755', # This is the permission that is installed by defaulto
   }
 
-  concat::fragment { "${config_file} Preamble":
+  concat::fragment { "${raspberrypi_config::config_file} Preamble":
     source  => $config_file,
     content => "# This file is managed by Puppet -- DO NOT EDIT\n\n",
     order   => '000',

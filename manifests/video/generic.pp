@@ -6,7 +6,7 @@
 #   include raspberrypi_config
 class raspberrypi_config::video::generic {
 
-  concat::fragment { "${config_file} Video Generic":
+  concat::fragment { "${::raspberrypi_config::config_file} Video Generic":
     source  => $::raspberrypi_config/config_file,
     content => epp('raspberrypi_config/video/generic.epp', {
       'hdmi_force_hotplug'       => $::raspberrypi_config::hdmi_force_hotplug,

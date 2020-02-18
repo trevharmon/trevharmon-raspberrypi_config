@@ -13,7 +13,7 @@ class raspberrypi_config::camera {
     default => $::raspberrypi_config::disable_camera_led,
   }
 
-  concat::fragment { "${config_file} Camera":
+  concat::fragment { "${::raspberrypi_config::config_file} Camera":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/camera.pp', {
       'disable_camera_led' => $disable_camera_led,

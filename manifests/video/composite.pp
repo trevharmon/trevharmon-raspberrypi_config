@@ -22,7 +22,7 @@ class raspberrypi_config::video::composite {
     rapsberrypi_config::waring{ 'The enable_tvout feature is only available on Pi 4B models': }
   }
 
-  concat::fragment { "${config_file} Video Composite":
+  concat::fragment { "${::raspberrypi_config::config_file} Video Composite":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/video/composite.epp', {
       'sdtv_mode'                 => $::raspberrypi_config::sdtv_mode,

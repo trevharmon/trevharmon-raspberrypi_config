@@ -99,6 +99,9 @@ Layout/EndOfLine:
   Enabled: false
 Layout/IndentHeredoc:
   Enabled: false
+Layout/SpaceInsideBrackets:
+  Exclude:
+  - lib/facter/raspberry_pi_model.rb
 Metrics/AbcSize:
   Enabled: false
 Metrics/BlockLength:

@@ -23,10 +23,10 @@ class raspberrypi_config::memory {
     # Check for overridden values
     if $gpu_mem_256 != undef {
       raspberrypi_config::warning { 'gpu_mem_256 will override gpu_mem': }
-    } 
+    }
     if $gpu_mem_512 != undef {
       raspberrypi_config::warning { 'gpu_mem_256 will override gpu_mem': }
-    } 
+    }
     if $gpu_mem_1024 != undef {
       raspberrypi_config::warning { 'gpu_mem_256 will override gpu_mem': }
     }
@@ -59,7 +59,7 @@ class raspberrypi_config::memory {
     raspberrypi_config::warning{"Cannot use gpu_mem_1024 for a model with memory ${memory}": }
   }
 
-  concat::fragment { "${config_file} Memory":
+  concat::fragment { "${::raspberrypi_config::config_file} Memory":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/memory.epp', {
       'gpu_mem'         => $pgu_mem,

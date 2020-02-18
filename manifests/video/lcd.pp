@@ -55,41 +55,41 @@ class raspberrypi_config::video::lcd {
     default => $::raspberrypi_config::dpi_timings_aspect_ratio,
   }
 
-  if $::rasberrypi_config::dpi_timings_h_active_pixels != undef or
-     $::rasberrypi_config::dpi_timings_h_sync_polarity != undef or
-     $::rasberrypi_config::dpi_timings_h_front_porch   != undef or
-     $::rasberrypi_config::dpi_timings_h_sync_pulse    != undef or
-     $::rasberrypi_config::dpi_timings_h_back_porch    != undef or
-     $::rasberrypi_config::dpi_timings_v_active_lines  != undef or
-     $::rasberrypi_config::dpi_timings_v_sync_polarity != undef or
-     $::rasberrypi_config::dpi_timings_v_front_porch   != undef or
-     $::rasberrypi_config::dpi_timings_v_sync_pulse    != undef or
-     $::rasberrypi_config::dpi_timings_v_back_porch    != undef or
-     $::rasberrypi_config::dpi_timings_v_sync_offset_a != undef or
-     $::rasberrypi_config::dpi_timings_v_sync_offset_b != undef or
-     $::rasberrypi_config::dpi_timings_pixel_rep       != undef or
-     $::rasberrypi_config::dpi_timings_frame_rate      != undef or
-     $::rasberrypi_config::dpi_timings_interlaced      != undef or
-     $::rasberrypi_config::dpi_timings_pixel_freq      != undef or
-     $::rasberrypi_config::dpi_timings_aspect_ratio    != undef
+  if  $::rasberrypi_config::dpi_timings_h_active_pixels != undef or
+      $::rasberrypi_config::dpi_timings_h_sync_polarity != undef or
+      $::rasberrypi_config::dpi_timings_h_front_porch   != undef or
+      $::rasberrypi_config::dpi_timings_h_sync_pulse    != undef or
+      $::rasberrypi_config::dpi_timings_h_back_porch    != undef or
+      $::rasberrypi_config::dpi_timings_v_active_lines  != undef or
+      $::rasberrypi_config::dpi_timings_v_sync_polarity != undef or
+      $::rasberrypi_config::dpi_timings_v_front_porch   != undef or
+      $::rasberrypi_config::dpi_timings_v_sync_pulse    != undef or
+      $::rasberrypi_config::dpi_timings_v_back_porch    != undef or
+      $::rasberrypi_config::dpi_timings_v_sync_offset_a != undef or
+      $::rasberrypi_config::dpi_timings_v_sync_offset_b != undef or
+      $::rasberrypi_config::dpi_timings_pixel_rep       != undef or
+      $::rasberrypi_config::dpi_timings_frame_rate      != undef or
+      $::rasberrypi_config::dpi_timings_interlaced      != undef or
+      $::rasberrypi_config::dpi_timings_pixel_freq      != undef or
+      $::rasberrypi_config::dpi_timings_aspect_ratio    != undef
   {
-    if $::rasberrypi_config::dpi_timings_h_active_pixels == undef or
-       $::rasberrypi_config::dpi_timings_h_sync_polarity == undef or
-       $::rasberrypi_config::dpi_timings_h_front_porch   == undef or
-       $::rasberrypi_config::dpi_timings_h_sync_pulse    == undef or
-       $::rasberrypi_config::dpi_timings_h_back_porch    == undef or
-       $::rasberrypi_config::dpi_timings_v_active_lines  == undef or
-       $::rasberrypi_config::dpi_timings_v_sync_polarity == undef or
-       $::rasberrypi_config::dpi_timings_v_front_porch   == undef or
-       $::rasberrypi_config::dpi_timings_v_sync_pulse    == undef or
-       $::rasberrypi_config::dpi_timings_v_back_porch    == undef or
-       $::rasberrypi_config::dpi_timings_v_sync_offset_a == undef or
-       $::rasberrypi_config::dpi_timings_v_sync_offset_b == undef or
-       $::rasberrypi_config::dpi_timings_pixel_rep       == undef or
-       $::rasberrypi_config::dpi_timings_frame_rate      == undef or
-       $::rasberrypi_config::dpi_timings_interlaced      == undef or
-       $::rasberrypi_config::dpi_timings_pixel_freq      == undef or
-       $::rasberrypi_config::dpi_timings_aspect_ratio    == undef
+    if  $::rasberrypi_config::dpi_timings_h_active_pixels == undef or
+        $::rasberrypi_config::dpi_timings_h_sync_polarity == undef or
+        $::rasberrypi_config::dpi_timings_h_front_porch   == undef or
+        $::rasberrypi_config::dpi_timings_h_sync_pulse    == undef or
+        $::rasberrypi_config::dpi_timings_h_back_porch    == undef or
+        $::rasberrypi_config::dpi_timings_v_active_lines  == undef or
+        $::rasberrypi_config::dpi_timings_v_sync_polarity == undef or
+        $::rasberrypi_config::dpi_timings_v_front_porch   == undef or
+        $::rasberrypi_config::dpi_timings_v_sync_pulse    == undef or
+        $::rasberrypi_config::dpi_timings_v_back_porch    == undef or
+        $::rasberrypi_config::dpi_timings_v_sync_offset_a == undef or
+        $::rasberrypi_config::dpi_timings_v_sync_offset_b == undef or
+        $::rasberrypi_config::dpi_timings_pixel_rep       == undef or
+        $::rasberrypi_config::dpi_timings_frame_rate      == undef or
+        $::rasberrypi_config::dpi_timings_interlaced      == undef or
+        $::rasberrypi_config::dpi_timings_pixel_freq      == undef or
+        $::rasberrypi_config::dpi_timings_aspect_ratio    == undef
     {
       fail('LCD DPI timings must have all items specified if any are specified.')
     }
@@ -121,7 +121,7 @@ class raspberrypi_config::video::lcd {
      $dpi_timings = undef
   }
 
-  concat::fragment { "${config_file} Video LCD":
+  concat::fragment { "${::raspberrypi_config::config_file} Video LCD":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/video/lcd.epp', {
       'ignore_lcd'          => $::raspberrypi_config::ignore_lcd,

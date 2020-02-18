@@ -51,6 +51,8 @@ class raspberrypi_config::boot {
   }
   $ramfsaddr      = $::raspberrypi_config::ramfsaddr
   $initramfs      = $::raspberrypi_config::initramfs
+  $initramfs_file = $::raspberrypi_config::initramfs_file
+  $initramfs_addr = $::raspberrypi_config::initramfs_addr
   $disable_splash = $::raspberrypi_config::disable_splash ? {
     undef   => undef,
     0       => false,
@@ -64,9 +66,9 @@ class raspberrypi_config::boot {
     default => $::raspberrypi_config::enable_gic,
   }
 
-  if ($startup_file == undef and $fixup_file != undef) or 
-     ($startup_file != undef and $fixup_file == undef) {
-    fail('startup_file and fixup_file must either both be defined or undefined')
+  if ($start_file == undef and $fixup_file != undef) or 
+     ($start_file != undef and $fixup_file == undef) {
+    fail('start_file and fixup_file must either both be defined or undefined')
   }
   if $arm_control {
     raspberrypi_config::warning{ 'arm_control has been DEPRECATED, use arm_64bit to enable 64-bit kernels': }
@@ -76,7 +78,7 @@ class raspberrypi_config::boot {
   }
   if ($initramfs_file == undef and $initramfs_addr != undef) or 
      ($initramfs_file != undef and $initramfs_addr == undef) {
-    raspberrypi_config::warning{ 'startup_file and fixup_file must either both be defined or undefined': }
+    raspberrypi_config::warning{ 'initramfs_file and initramfs_addr must either both be defined or undefined': }
   }
   if $ramfsfile != undef and $initramfs_file != undef {
     raspberrypi_config::warning{ 'A ramdisk should either be defined using ramfsfile/ramfsaddr or initramfs_file/initramfs_addr': }
@@ -85,7 +87,7 @@ class raspberrypi_config::boot {
     rapsberrypi_config::waring{ 'The enable_gic feature is only available on Pi 4B models': }
   }
 
-  concat::fragment { "${config_file} Boot":
+  concat::fragment { "${::rapsberrypi_config::config_file} Boot":
     source  => $::raspberrypi_config::config_file,
     content => epp('raspberrypi_config/boot.epp', {
       'start_file'               => $start_file,
@@ -101,8 +103,8 @@ class raspberrypi_config::boot {
       'kernel_old'               => $kernel_old,
       'ramfsfile'                => $ramfsfile,
       'ramfsaddr'                => $ramfsaddr,
-      'initramfs_file'           => $::raspberrypi_config::initramfs_file,
-      'initramfs_addr'           => $::raspberrypi_config::initramfs_addr,
+      'initramfs_file'           => $initramfs_file,
+      'initramfs_addr'           => $initramfs_addr,
       'init_uart_baud'           => $::raspberrypi_config::init_uart_baud,
       'init_uart_clock'          => $::raspberrypi_config::init_uart_clock,
       'bootcode_delay'           => $::raspberrypi_config::bootcode_delay,
